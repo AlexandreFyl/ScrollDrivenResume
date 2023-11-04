@@ -3,7 +3,7 @@
 Welcome to my developer resume github.
 
 > **Little disclaimer**
-> The following browsers are currently experiencing compatibility problems with stones: **Firefox**, **Safari**.
+> The following browsers are currently experiencing compatibility problems with scroll-driven animations: **Firefox**, **Safari**.
 > Sorry for the inconvenience.
 > You can find the updated browser compatibility list [here](https://developer.mozilla.org/fr/docs/Web/CSS/animation-timeline#browser_compatibility) at the bottom of the page.
 
