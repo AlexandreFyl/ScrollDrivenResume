@@ -1,0 +1,36 @@
+body {
+  margin: 0;
+  padding-top: 100vh;
+}
+
+#sticky-parallax-header {
+  /* Styling & positioning */
+  color: #fff;
+  width: 100%;
+  background-image: url("./assets/background.jpg");
+  background-size: cover;
+  background-blend-mode: soft-light;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  /* Animation  */
+  animation: sticky-parallax-header-move-and-size linear forwards;
+  animation-timeline: scroll();
+  animation-range: 0vh 90vh;
+}
+
+@keyframes sticky-parallax-header-move-and-size {
+  from {
+    background-position: 50% 0;
+    height: 100vh;
+    font-size: calc(4vw + 1em);
+  }
+  to {
+    background-position: 50% 100%;
+    background-image: url("./assets/background_leather2.jpg");
+    height: 10vh;
+    font-size: 2em;
+  }
+}
