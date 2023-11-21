@@ -31,6 +31,7 @@ body {
     background-position: 50% 100%;
     background-image: url("./assets/background_leather2.jpg");
     height: 10vh;
-    font-size: 2em;
+    color: transparent;
+    user-select: none;
   }
 }
