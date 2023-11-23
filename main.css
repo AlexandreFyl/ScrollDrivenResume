@@ -1,30 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
 :root {
+  --titles-font: "Permanent Marker", cursive;
+  --text-font: "Roboto", sans-serif;
+
   --bg-color: #e5e5e5;
   --primary-color: #14213d;
   --secondary-color: #fca311;
+
+  /* variables used for squared css background on the second section. S/o to https://css-pattern.com/ <3, i just adjusted the colors to match my graphic design */
+  --s: 222px;
+  --c1: #5b5b5b;
+  --c2: #e5e5e5;
+  --c3: #a0a0a0;
+  --_g: var(--c1) 10%, var(--c2) 10.5% 19%, #0000 19.5% 80.5%,
+    var(--c2) 81% 89.5%, var(--c3) 90%;
+  --_c: from -90deg at 37.5% 50%, #0000 75%;
+  --_l1: linear-gradient(145deg, var(--_g));
+  --_l2: linear-gradient(35deg, var(--_g));
 }
 
 body {
   margin: 0;
-  padding-top: 95vh;
+  padding-top: 92.5vh;
   background-color: black;
 }
 
-h1,
-h2 {
-  line-height: 1;
-  font-weight: 800;
+h1 {
+  margin: 0;
+  padding: 0;
+  display: inline;
+  font-size: 3vw;
 }
 
-h1 {
+h2 {
+  line-height: 1;
+}
+
+h2 {
   font-size: 5vw;
   margin-bottom: 1rem;
   overflow-wrap: break-word;
   hyphens: auto;
 }
 
+header,
 h2 {
+  font-family: var(--titles-font);
+}
+
+header div {
   font-size: 3vw;
+}
+
+p {
+  font-family: var(--text-font);
 }
 
 /* HEADER */
@@ -65,41 +95,8 @@ h2 {
   }
 }
 
-#mouse-img {
-  width: 10%;
-  animation: 2s mouse-img-shaking forwards, 1s mouse-img-fade-out 2s forwards;
-  z-index: 68;
-}
-
-@keyframes mouse-img-shaking {
-  0% {
-    transform: translateY(0);
-  }
-  25% {
-    transform: translateY(5px);
-  }
-  50% {
-    transform: translateY(-5px);
-  }
-  75% {
-    transform: translateY(5px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
-@keyframes mouse-img-fade-out {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
 /* MAIN */
-h1 span {
+h2 span {
   display: block;
 }
 
@@ -117,8 +114,7 @@ section:not(#secondSection) {
 }
 
 #firstSection {
-  background-image: url("./assets/wave_background.svg");
-  background-size: cover;
+  background: linear-gradient(0deg, var(--bg-color), rgb(0, 0, 0));
 }
 
 @keyframes move {
@@ -138,7 +134,18 @@ section:not(#secondSection) {
   view-timeline-axis: block;
   display: flex;
   color: black;
-  background-color: var(--bg-color);
+  background: var(--_l1), var(--_l1) calc(var(--s) / 2) var(--s), var(--_l2),
+    var(--_l2) calc(var(--s) / 2) var(--s),
+    conic-gradient(var(--_c), var(--c1) 0) calc(var(--s) / 8) 0,
+    conic-gradient(var(--_c), var(--c3) 0) calc(var(--s) / 2) 0,
+    linear-gradient(
+      90deg,
+      var(--c3) 38%,
+      var(--c1) 0 50%,
+      var(--c3) 0 62%,
+      var(--c1) 0
+    );
+  background-size: var(--s) calc(2 * var(--s) / 3);
 }
 
 .pin-wrap-sticky {
@@ -180,7 +187,11 @@ section:not(#secondSection) {
 }
 
 .custom-cards {
-  background-color: red;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(74, 74, 74, 0.75);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
 }
 
 .side-card {
