@@ -117,6 +117,10 @@ section:not(#secondSection) {
   background: linear-gradient(0deg, var(--bg-color), rgb(0, 0, 0));
 }
 
+#thirdSection {
+  background: linear-gradient(0deg, rgb(0, 0, 0), var(--bg-color));
+}
+
 @keyframes move {
   to {
     /* Move horizontally so that right edge is aligned against the viewport */
