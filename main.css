@@ -202,8 +202,9 @@ section:not(#secondSection) {
 .custom-cards,
 .side-card {
   height: 80vh;
-  flex-grow: 1;
+  min-width: 50vw;
   max-width: 90vw; /* for mobiles */
+  flex-grow: 1;
 }
 
 .custom-cards {
@@ -221,18 +222,52 @@ section:not(#secondSection) {
   justify-content: center;
 }
 
+.card-header {
+  height: 10%;
+  margin: 0;
+  text-align: center;
+  border-bottom: solid 1px white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .card-header h3 {
   font-family: var(--text-font);
-  margin-block-start: 0.5em;
-  margin-block-end: 0.5em;
+  margin: 0;
   font-size: 2em;
 }
 
-.card-header {
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-  text-align: center;
-  border-bottom: solid 1px white;
+.card-content {
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.card-content p {
+  font-size: 1.3em;
+  margin-left: 15px;
+  line-height: 2;
+}
+
+.card-content .badges {
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 5px;
+  margin-right: 10px;
+}
+
+.card-content-logos {
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.card-content-logos img {
+  width: 200px;
 }
 
 /* FOOTER */
